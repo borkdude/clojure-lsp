@@ -825,7 +825,7 @@
 <tr>
 <td>workspace/configuration</td>
 <td></td>
-<td></td>
+<td>We use a more robust settings concept (.lsp/config.edn)</td>
 </tr>
 <tr>
 <td>workspace/didChangeWatchedFiles</td>
@@ -846,6 +846,36 @@
 <td>workspace/applyEdit</td>
 <td>√</td>
 <td>TextDocumentEdit and RenameFile only</td>
+</tr>
+<tr>
+<td>workspace/willRenameFiles</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>workspace/didRenameFiles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>workspace/willCreateFiles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>workspace/didCreateFiles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>workspace/willDeleteFiles</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>workspace/didDeleteFiles</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>textDocument/didOpen</td>
@@ -904,13 +934,13 @@
 </tr>
 <tr>
 <td>textDocument/declaration</td>
-<td></td>
-<td></td>
+<td>√</td>
+<td>Show where the symbol was declared on the file, like alias/refer  definitions</td>
 </tr>
 <tr>
 <td>textDocument/definition</td>
 <td>√</td>
-<td>TODO: Find java classes definition</td>
+<td></td>
 </tr>
 <tr>
 <td>textDocument/typeDefinition</td>
@@ -919,8 +949,8 @@
 </tr>
 <tr>
 <td>textDocument/implementation</td>
-<td></td>
-<td></td>
+<td>√</td>
+<td>Implementation of defprotocols/defmulti showing deftypes and defrecords</td>
 </tr>
 <tr>
 <td>textDocument/references</td>
@@ -1251,7 +1281,7 @@ All commands expect the first three args to be <code>[document-uri, line, column
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 22, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2022</span>
     
   </small>
 </div>
