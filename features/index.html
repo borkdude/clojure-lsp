@@ -1485,9 +1485,25 @@ For more information check the <a href="../settings/#stub-generation">stubs sett
 <td><a href="../images/features/drag.gif"><img alt="Screen recording of Drag forward and backward" src="../images/features/drag.gif" /></a></td>
 </tr>
 <tr>
+<td>dk</td>
+<td>destructure-keys</td>
+<td>Destructure keys</td>
+<td><code>[file-uri,row,col]</code></td>
+<td>✅</td>
+<td><a href="../images/features/destructure-keys.gif"><img alt="Screen recording of Destructure keys" src="../images/features/destructure-keys.gif" /></a></td>
+</tr>
+<tr>
+<td>ed</td>
+<td>extract-to-def</td>
+<td>Extract to def</td>
+<td><code>[file-uri,row,col,name]</code></td>
+<td>✅</td>
+<td><a href="../images/features/extract-to-def.gif"><img alt="Screen recording of Extract to def" src="../images/features/extract-to-def.gif" /></a></td>
+</tr>
+<tr>
 <td>ef</td>
 <td>extract-function</td>
-<td>Extract Function</td>
+<td>Extract function</td>
 <td><code>[file-uri,row,col,name]</code></td>
 <td>✅</td>
 <td><a href="../images/features/extract-function.gif"><img alt="Screen recording of Extract function" src="../images/features/extract-function.gif" /></a></td>
@@ -1507,6 +1523,38 @@ For more information check the <a href="../settings/#stub-generation">stubs sett
 <td><code>[file-uri,row,col]</code></td>
 <td>✅</td>
 <td><a href="../images/features/create-private-function.gif"><img alt="Screen recording of Create function from example" src="../images/features/create-private-function.gif" /></a></td>
+</tr>
+<tr>
+<td>ga</td>
+<td>get-in-all</td>
+<td>Move all expressions to get/get-in</td>
+<td><code>[file-uri,row,col]</code></td>
+<td>✅</td>
+<td><a href="../images/features/thread-get.gif"><img alt="Screen recording of Threading get" src="../images/features/thread-get.gif" /></a></td>
+</tr>
+<tr>
+<td>gl</td>
+<td>get-in-less</td>
+<td>Remove one element from get/get-in</td>
+<td><code>[file-uri,row,col]</code></td>
+<td>✅</td>
+<td><a href="../images/features/thread-get.gif"><img alt="Screen recording of Threading get" src="../images/features/thread-get.gif" /></a></td>
+</tr>
+<tr>
+<td>gm</td>
+<td>get-in-more</td>
+<td>Move another expression to get/get-in</td>
+<td><code>[file-uri,row,col]</code></td>
+<td>✅</td>
+<td><a href="../images/features/thread-get.gif"><img alt="Screen recording of Threading get" src="../images/features/thread-get.gif" /></a></td>
+</tr>
+<tr>
+<td>gn</td>
+<td>get-in-none</td>
+<td>Unwind whole get/get-in</td>
+<td><code>[file-uri,row,col]</code></td>
+<td>✅</td>
+<td><a href="../images/features/thread-get.gif"><img alt="Screen recording of Threading get" src="../images/features/thread-get.gif" /></a></td>
 </tr>
 <tr>
 <td>il</td>
@@ -1557,6 +1605,14 @@ For more information check the <a href="../settings/#stub-generation">stubs sett
 <td><a href="../images/features/promote-fn.gif"><img alt="Screen recording of Promote fn to defn" src="../images/features/promote-fn.gif" /></a></td>
 </tr>
 <tr>
+<td>rk</td>
+<td>restructure-keys</td>
+<td>Restructure keys</td>
+<td><code>[file-uri,row,col]</code></td>
+<td>✅</td>
+<td><a href="../images/features/restructure-keys.gif"><img alt="Screen recording of Restructure keys" src="../images/features/restructure-keys.gif" /></a></td>
+</tr>
+<tr>
 <td>sc</td>
 <td>change-collection</td>
 <td>Switch collection to <code>{}, (), #{}, []</code></td>
@@ -1565,12 +1621,12 @@ For more information check the <a href="../settings/#stub-generation">stubs sett
 <td><a href="../images/features/change-coll.gif"><img alt="Screen recording of Switch collection" src="../images/features/change-coll.gif" /></a></td>
 </tr>
 <tr>
-<td>sm</td>
-<td>sort-map</td>
-<td>Sort map</td>
+<td>sl</td>
+<td>sort-clauses</td>
+<td>Sort map/vector/list/set/clauses</td>
 <td><code>[file-uri,row,col]</code></td>
 <td>✅</td>
-<td><a href="../images/features/sort-map.gif"><img alt="Screen recording of Sort map" src="../images/features/sort-map.gif" /></a></td>
+<td><a href="../images/features/sort-clauses.gif"><img alt="Screen recording of Sort clauses" src="../images/features/sort-clauses.gif" /></a></td>
 </tr>
 <tr>
 <td>tf</td>
@@ -1607,7 +1663,7 @@ For more information check the <a href="../settings/#stub-generation">stubs sett
 <tr>
 <td>ua</td>
 <td>unwind-all</td>
-<td>Unwind all</td>
+<td>Unwind whole thread</td>
 <td><code>[file-uri,row,col]</code></td>
 <td>✅</td>
 <td></td>
@@ -1615,7 +1671,7 @@ For more information check the <a href="../settings/#stub-generation">stubs sett
 <tr>
 <td>uw</td>
 <td>unwind-thread</td>
-<td>Unwind thread</td>
+<td>Unwind thread once</td>
 <td><code>[file-uri,row,col]</code></td>
 <td></td>
 <td></td>
@@ -1635,7 +1691,7 @@ For more information check the <a href="../settings/#stub-generation">stubs sett
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 24, 2022</span>
     
   </small>
 </div>

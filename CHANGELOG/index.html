@@ -502,6 +502,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#20220901-152731" class="md-nav__link">
+    2022.09.01-15.27.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20220724-182543" class="md-nav__link">
+    2022.07.24-18.25.43
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20220629-193213" class="md-nav__link">
+    2022.06.29-19.32.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#20220622-140950" class="md-nav__link">
     2022.06.22-14.09.50
   </a>
@@ -1226,6 +1247,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#20220901-152731" class="md-nav__link">
+    2022.09.01-15.27.31
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20220724-182543" class="md-nav__link">
+    2022.07.24-18.25.43
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20220629-193213" class="md-nav__link">
+    2022.06.29-19.32.13
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#20220622-140950" class="md-nav__link">
     2022.06.22-14.09.50
   </a>
@@ -1930,6 +1972,106 @@
                 
                 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">#</a></h1>
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
+<ul>
+<li>General</li>
+<li>Improve clj-depend merge config to overwrite <code>source-paths</code> only if it is nil or empty.  #1264</li>
+<li>Fix stubs generation issue on MS-Windows, coming out of enabling all integrations tests on windows. #1211</li>
+<li>Improve MS-Windows support by fixing various path, URI and line ending issues coming out of repairing the unit tests suite on windows. #1211</li>
+<li>End dep-graph-queries experiment; clojure-lsp now uses the dep-graph to optimize queries whenever possible</li>
+<li>Bump clj-kondo to <code>2022.09.09-20220918.164105-17</code>. #1226 </li>
+<li>Fix issue with changes being reporting with spurious and incorrect line endings on MS-Windows text files. #1211</li>
+<li>
+<p>Index internal data by URI instead of filename, to minimize conversion between these formats when running queries. #1207</p>
+</li>
+<li>
+<p>Editor</p>
+</li>
+<li>Fix to avoid error when checking code actions from an #_x uneval node. #1227</li>
+<li>Add support to decompile jar as a java project when finding the definition of a java class, allowing to have LSP features on that java project. #1187</li>
+<li>Add refactorings similar to <code>Sort map</code>: <code>Sort vector</code>, <code>Sort list</code>, <code>Sort set</code>, and <code>Sort clauses</code> for functions like <code>assoc</code>. #1155</li>
+<li>Support java class decompilation for zipfile scheme (vim users).</li>
+<li>Avoid keeping diagnostics of external closed files for Calva. https://github.com/BetterThanTomorrow/calva/issues/1864</li>
+<li>Lint opened files after a clojure-lsp or clj-kondo config file is saved on disk, avoiding users to re-edit files. #1247</li>
+<li>Allow find definition of java class usages where definition comes from clojure, like defrecords.</li>
+<li>Fix: wait for rename to apply before allowing another rename, to ensure suggested name is correct. #1270</li>
+<li>
+<p>Process requests in parallel, to prevent typing lag and other performance problems introduced during migration away from lsp4j. #1240</p>
+</li>
+<li>
+<p>API/CLI</p>
+</li>
+<li>Fix missing diagnostics when <code>--project-root</code> is different than current directory. #1245</li>
+</ul>
+<h2 id="20220901-152731">2022.09.01-15.27.31<a class="headerlink" href="#20220901-152731" title="Permanent link">#</a></h2>
+<ul>
+<li>General</li>
+<li>Remove dependency on lsp4j. https://github.com/clojure-lsp/lsp4clj/issues/8</li>
+<li>Fix extra space on :import when sorting classes. #1152</li>
+<li>Bump Graalvm from 22.0.0.2 to 22.2.0 improving binary performance/size. #1154</li>
+<li>Bump clj-kondo to <code>2022.08.03</code>.</li>
+<li>General release of dep-graph-queries, improving query performance. See prior release for feature details.</li>
+<li>Generate nightly builds for macos aarch64 (M1/M2) every push on master.</li>
+<li>Bump lsp4clj to <code>1.2.1</code>.</li>
+<li>Bump cljfmt to <code>0.9.0</code>.</li>
+<li>Fix issue with classpath clojure build tools invocation on MS-Windows. #1132</li>
+<li>
+<p>Bump babashka/fs to <code>0.1.11</code>.</p>
+</li>
+<li>
+<p>Editor</p>
+</li>
+<li>Improve completion sorting, showing locals before functions and other completion items. #1158</li>
+<li>Fix hover to show current var definition docs instead of <code>def</code>/<code>defn</code>. #1157</li>
+<li>Improve hover for requires to show ns docstring. #1171</li>
+<li>Fix destructuring of things that have been destructured before. #1156</li>
+<li>Some completions require that a new alias be added to the ns form. Fix this feature for Calva users, and improve performance for all users. #1068</li>
+<li>Fix resolve-macro-as code action corner case. #1084</li>
+<li>Ensure line numbers provided by document-symbol correspond to the latest version of the file. #1178</li>
+<li>Avoid exceptions when clients use URIs that don't exist on disk.</li>
+<li>Fix documentation on completion items. #1181</li>
+<li>Fix rename of defrecords. #1165</li>
+<li>Fix to send all diagnostics to client at startup, even in very large projects. #1153</li>
+<li>Fix to preserve kebab-casing in server-info-raw. #1195</li>
+<li>Add refactoring <code>Restructure keys</code>, the inverse of <code>Destructure keys</code>. #1170</li>
+<li>Add refactorings to convert between <code>(:x m)</code> and <code>(get m :x)</code> or <code>(:y (:x m))</code> and <code>(get-in m [:x :y])</code>. #1172</li>
+<li>Add support to imported java class on completion. #1193</li>
+<li>Add new question to skip or retry classpath scan during startup if failed. </li>
+<li>Improve performance of processing of changed files outside editor calling clj-kondo in batch. #1205</li>
+<li>When renaming a keyword that is also a destructured key, rename its local usages too. #1192</li>
+</ul>
+<h2 id="20220724-182543">2022.07.24-18.25.43<a class="headerlink" href="#20220724-182543" title="Permanent link">#</a></h2>
+<ul>
+<li>General</li>
+<li>
+<p>Bump <code>cljfmt</code> from 0.8.0 -&gt; 0.8.2</p>
+</li>
+<li>
+<p>Editor</p>
+</li>
+<li>Add clojure.core/fn to resolve-macro-as options. <a href="https://github.com/clojure-lsp/clojure-lsp/issues/1094">#1094</a></li>
+<li>Restore #995 Improve element selected on <code>textDocument/hover</code> (previously reverted) with a fix that keeps it working for Calva even after a syntax error is introduced.</li>
+<li>Improve call hierarchy performance by parsing less frequently. #1092</li>
+<li>Improve system wide performance by keeping a graph of dependencies between namespaces. #990 #1053
+    Enable setting <code>:experimental {:dep-graph-queries true}</code> to beta test this feature.</li>
+<li>Improve performance by adding second level of analysis indexing.</li>
+<li>Improve performance of things that need keyword definitions, like completion and custom lint.</li>
+<li>Fix hover showing previous function elements on some cases. #1098</li>
+<li>Fix: find definition will find registration of unnamespaced keyword.</li>
+<li>Fix to update unused-public-var lint on registered keywords as usages change in other files. #1018</li>
+<li>Fix to navigate to var defined by declare, when there aren't any later defs. #1107</li>
+<li>Fix to always go to the definition of the correct var imported by potemkin. #1020</li>
+<li>Fix to correctly rename namespaces. #1121</li>
+<li>Fix to correctly :keep require and import indent spacing. #1141</li>
+<li>Improve accuracy of progress reporting during uncached startup. #1134</li>
+<li>Add refactoring <code>Destructure keys</code> to destructure keywords. #905</li>
+<li>Add refactoring <code>Extract to def</code> to create a <code>def</code> from the thing under the cursor. #1136</li>
+<li>Include defmethods in document and workspace symbols. #1016</li>
+</ul>
+<h2 id="20220629-193213">2022.06.29-19.32.13<a class="headerlink" href="#20220629-193213" title="Permanent link">#</a></h2>
+<ul>
+<li>Editor</li>
+<li>Reverted #995 Improve element selected on <code>textDocument/hover</code>, as it caused clojure-lsp to stop working for Calva users after a syntax error was introduced. #1080</li>
+</ul>
 <h2 id="20220622-140950">2022.06.22-14.09.50<a class="headerlink" href="#20220622-140950" title="Permanent link">#</a></h2>
 <ul>
 <li>General</li>
@@ -2070,11 +2212,11 @@
 <h2 id="20220331-200020">2022.03.31-20.00.20<a class="headerlink" href="#20220331-200020" title="Permanent link">#</a></h2>
 <ul>
 <li>Fix URI resolver on java JDK logic.</li>
-<li>Fix zipfile scheme when finding external deps. </li>
+<li>Fix zipfile scheme when finding external deps.</li>
 </ul>
 <h2 id="20220331-142114">2022.03.31-14.21.14<a class="headerlink" href="#20220331-142114" title="Permanent link">#</a></h2>
 <ul>
-<li>Add java class find-definition support, decompiling .class files when available. #762 </li>
+<li>Add java class find-definition support, decompiling .class files when available. #762</li>
 <li>Add JDK source discoverability feature, searching for installed JDK for later analyze with clj-kondo and support java classes interop.</li>
 <li>Add <code>:java :download-jdk-source?</code> setting to download JDK source after startup if not cached before globally or found locally. Disabled by default.</li>
 <li>Avoid high CPU usage and freezes by more efficiently finding referenced files to notify on file change. #844 @mainej</li>
@@ -3001,7 +3143,7 @@ when multiple files are changed at same time (rename, iedit, etc).</li>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 28, 2022</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 24, 2022</span>
     
   </small>
 </div>
