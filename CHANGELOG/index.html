@@ -2114,10 +2114,11 @@
 <h2 id="unreleased">Unreleased<a class="headerlink" href="#unreleased" title="Permanent link">#</a></h2>
 <ul>
 <li>General</li>
-<li>Bump clj-kondo to <code>2022.12.11-20221220.093423-5</code></li>
+<li>Bump clj-kondo to <code>2022.12.11-20230111.135117-16</code></li>
 <li>Avoid false-positives of unused-public-var for functions used in :gen-class that starts with <code>-</code> as convention. #1443</li>
+<li>New jar available on releases: <code>clojure-lsp-server.jar</code>, an Uberjar not aot-ed containing both clojure-lsp core + server code, improving startup time for JVM clients, for example for <code>lein-clojure-lsp</code>. Any lib using <code>clojure-lsp-standalone.jar</code> should consider switch to this new jar.</li>
 <li>
-<p>New jar available on releases: <code>clojure-lsp-server.jar</code>, an Uberjar not aot-ed containing both clojure-lsp core + server code, improving startup time for JVM clients, for example for <code>lein-clojure-lsp</code>. Any lib using <code>clojure-lsp-standalone.jar</code> should consider switch to this new jar.</p>
+<p>Change <code>:source-paths-ignore-regex</code> default value to <code>["target.*"]</code>, removing resource folders. #1452</p>
 </li>
 <li>
 <p>Editor</p>
@@ -2127,14 +2128,16 @@
 <li>Improve semantic tokens for defprotocol, definterface coloring as <code>interface</code> tokens.</li>
 <li>Include reffered vars in completion. #1440</li>
 <li>Allow rename alias of function calls, renaming properly both function usages and alias definition.</li>
+<li>Add support for keyword analysis in edn files, allowing find-references, document highlight and other lsp features to keywords.</li>
 <li>
-<p>Add support for keyword analysis in edn files, allowing find-references, document highlight and other lsp features to keywords.</p>
+<p>find-definition and references for quoted symbols like <code>'clojure.core/inc</code> and symbols mentioned in <code>.edn</code> files. #1446</p>
 </li>
 <li>
 <p>API/CLI</p>
 </li>
 <li>Make diagnostics command print as json or edn. #1419</li>
 <li>Make possible starting a chan server with clojure-lsp components, useful to other clients extend.</li>
+<li>Consider edn files when linting project, allowing to format edn files. #1452</li>
 </ul>
 <h2 id="20221209-155110">2022.12.09-15.51.10<a class="headerlink" href="#20221209-155110" title="Permanent link">#</a></h2>
 <ul>
@@ -3365,7 +3368,7 @@ when multiple files are changed at same time (rename, iedit, etc).</li>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2023</span>
     
   </small>
 </div>
