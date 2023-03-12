@@ -1272,6 +1272,11 @@
 <td><code>true</code></td>
 </tr>
 <tr>
+<td><code>:completion</code> <code>:analysis-type</code></td>
+<td>The type for analysis to be performed during the completion, accepted values are <code>fast-but-stale</code> which won't wait for remaining analysis to complete to process the completion and <code>slow-but-accurate</code> which will wait for any changes on document to then process the completion items.</td>
+<td><code>:fast-but-stale</code></td>
+</tr>
+<tr>
 <td><code>:completion</code> <code>:additional-edits-warning-text</code></td>
 <td>A warning to show when the completion will perform additional edits, such as requiring a new alias. Appears in the completion items' documentation.</td>
 <td><code>nil</code></td>
@@ -1315,6 +1320,11 @@
 <td><code>:source-paths-ignore-regex</code></td>
 <td>list of regex to filter source-paths. By default, source-paths are retrieved from classpath, and usually the classpath contains folders that are not directly project code or it's auto-generated like cljs <code>resources</code> or <code>target</code> folders but it's inside your project. Replace old <code>:ignore-classpath-directories</code> setting.</td>
 <td><code>["target.*"]</code></td>
+</tr>
+<tr>
+<td><code>:analysis-paths-ignore-regex</code></td>
+<td>list of regex to filter paths to be analyzed. Useful for excluding huge files or folders that may affect final analysis size and performance, like huge edn files.</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>:java</code> <code>:download-jdk-source?</code></td>
@@ -1614,7 +1624,7 @@ The available settings inside <code>:stubs</code> are:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 12, 2023</span>
     
   </small>
 </div>
