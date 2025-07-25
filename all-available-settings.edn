@@ -16,6 +16,8 @@
            :clj-depend {:level :info} ;; Only if any clj-depend config is found
            :clojure-lsp/unused-public-var {:level :info}
            :clojure-lsp/different-aliases {:level :off}
+           :clojure-lsp/cyclic-dependencies {:level :error
+                                              :exclude-namespaces #{}}
            :custom {}}
  :clean {:automatically-after-ns-refactor true
          :ns-inner-blocks-indentation :next-line
@@ -57,6 +59,7 @@
  :show-docs-arity-on-same-line? false ; deprecated, will be removed soon, use :hover :arity-on-same-line?
  :lens-segregate-test-references true ; deprecated, will be removed soon, use :code-lens :segregate-test-references instead.
  :copy-kondo-configs? true
+ :kondo-config-dir nil ; defaults to <project-root-uri>/.clj-kondo
  :analysis {:keywords {:definitions true
                        :usages true}
             :java {:class-definitions true
